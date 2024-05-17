@@ -8,7 +8,7 @@ $db       = mysql_select_db('livraria');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html">
     <title>Pesquisa Categoria </title>
-    <link rel="stylesheet" href="../cadastro.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 
