@@ -1,0 +1,14 @@
+a {
+    
+    text-decoration: none;
+    color: orange;
+    
+}
+ li{
+display: inline;
+
+}
+
+ul{
+    word-spacing: 15px;
+}
