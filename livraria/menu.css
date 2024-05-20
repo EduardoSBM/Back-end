@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1b1a1a, #272626);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#container {
+    background: linear-gradient(135deg, rgb(77, 70, 70), rgb(102, 94, 94));
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    height: 640px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    transition: color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a i {
+    margin-right: 10px;
+    font-size: 28px;
+    transition: transform 0.3s;
+}
+
+a:hover {
+    color: #ce0f0f;
+    transform: scale(1.1);
+}
+
+a:hover i {
+    transform: rotate(360deg);
+}
+
+a:active {
+    color: #ce0f0f;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

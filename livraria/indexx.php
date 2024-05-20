@@ -27,10 +27,10 @@ $db = mysql_select_db('livraria');
             <option value="" selected="selected">Categoria</option>
 
             <?php
-            $query = mysql_query("SELECT codigo, descricao FROM categoria");
+            $query = mysql_query("SELECT codigo, nome FROM categoria");
             while ($categoria = mysql_fetch_array($query)) { ?>
               <option value="<?php echo $categoria['codigo'] ?>">
-                <?php echo $categoria['descricao'] ?>
+                <?php echo $categoria['nome'] ?>
               </option>
             <?php }
             ?>
@@ -54,42 +54,18 @@ $db = mysql_select_db('livraria');
 
         <li>
 
-          <select name="marca" class="seleee">
-            <option value="" selected="selected">Marcas</option>
+          <select name="autor" class="seleee">
+            <option value="" selected="selected">Autor</option>
 
             <?php
-            $query = mysql_query("SELECT codigo, nome FROM marca");
-            while ($marcas = mysql_fetch_array($query)) { ?>
-              <option value="<?php echo $marcas['codigo'] ?>">
-                <?php echo $marcas['nome'] ?>
+            $query = mysql_query("SELECT codigo, nome FROM autor");
+            while ($autor = mysql_fetch_array($query)) { ?>
+              <option value="<?php echo $autor['codigo'] ?>">
+                <?php echo $autor['nome'] ?>
               </option>
             <?php }
             ?>
           </select>
-        </li>
-
-        <li>
-          <select name="tamanho" class='seleee'>
-            <option value="" selected="selected">Tamanho</option>
-            <option value="30">30</option>
-            <option value="32">32</option>
-            <option value="40">40</option>
-            <option value="42">42</option>
-          </select>
-        </li>
-
-        <li>
-          <select name="preco" class='seleee'>
-            <option value="" selected="selected">Preco</option>
-            <option value="100 and 200">100 a 200</option>
-            <option value="200 and 300">200 a 300</option>
-            <option value="300 and 400">300 a 400</option>
-            <option value="400 and 500">400 a 500</option>
-            <option value="500 and 600">500 a 600</option>
-            <option value="600 and 700">600 a 700</option>
-            <option value="700 and 800">700 a 800</option>
-          </select>
-
         </li>
 
         <li>
@@ -105,8 +81,7 @@ $db = mysql_select_db('livraria');
   </form>
   <div class="corpo">
     <?php
-
-
+    
     if (isset($_POST['pesquisar'])) {
 
       //------- pesquisa autor
