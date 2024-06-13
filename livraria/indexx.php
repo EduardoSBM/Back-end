@@ -16,9 +16,11 @@ $db = mysql_select_db('livraria');
   <form name="formulario" method="post" action="indexx.php">
 
     <div class="topo">
-      <img  class="logo" src= "./ft/logo.png">
-      <a href="Login.php"><img class="ftlogin"
-          src="https://www.iconpacks.net/icons/2/free-user-login-icon-3057-thumb.png"></a>
+      <img  class="logo" src= "./ft/logo.png"></img>
+        <a href="Login.php"><img class="ftlogin" src="https://www.iconpacks.net/icons/2/free-user-login-icon-3057-thumb.png"></a>
+        <a href='carrinhoo/tabela_carrinho.php'>
+          <img class="carrinho" src="ft\carrinho.png">
+        </a>
     </div>
     <div class="linha1">
       <ul>
@@ -80,6 +82,7 @@ $db = mysql_select_db('livraria');
 
   </form>
   <div class="corpo">
+    
     <?php
     
     if (isset($_POST['pesquisar'])) {
@@ -105,7 +108,9 @@ $db = mysql_select_db('livraria');
       if (($autor <> 'null') and ($categoria == 'null') and ($classificacao == 'null')) {
         $sql_livro = "SELECT livro.titulo, livro.valor, livro.fotocapa
                             FROM livro, autor, categoria, classificacao
-                            WHERE livro.codautor = autor.codigo
+                            WHERE livro.codcategoria = categoria.codigo
+                            and livro.codautor = autor.codigo
+                            and livro.codclassificacao = classificacao.codigo
                             AND livro.valor >= $preco_min
                             AND livro.valor <= $preco_max
                             and autor.codigo = $autor ";
@@ -118,6 +123,8 @@ $db = mysql_select_db('livraria');
         $sql_livro = "SELECT livro.titulo, livro.valor, livro.fotocapa
                             FROM livro, autor, categoria, classificacao
                             WHERE livro.codcategoria = categoria.codigo
+                            and livro.codautor = autor.codigo
+                            and livro.codclassificacao = classificacao.codigo
                             AND livro.valor >= $preco_min
                             AND livro.valor <= $preco_max
                             and categoria.codigo = $categoria ";
@@ -129,7 +136,9 @@ $db = mysql_select_db('livraria');
       if (($autor == 'null') and ($categoria == 'null') and ($classificacao <> 'null')) {
         $sql_livro = "SELECT livro.titulo, livro.valor, livro.fotocapa
                         FROM livro, autor, categoria, classificacao
-                        where livro.codclassificacao = classificacao.codigo
+                        WHERE livro.codcategoria = categoria.codigo
+                        and livro.codautor = autor.codigo
+                        and livro.codclassificacao = classificacao.codigo
                         AND livro.valor >= $preco_min
                         AND livro.valor <= $preco_max
                         and classificacao.codigo = $classificacao ";
@@ -143,6 +152,7 @@ $db = mysql_select_db('livraria');
                             FROM livro, autor, categoria, classificacao
                             WHERE livro.codcategoria = categoria.codigo
                             and livro.codautor = autor.codigo
+                            and livro.codclassificacao = classificacao.codigo
                             AND livro.valor >= $preco_min
                             AND livro.valor <= $preco_max
                             and autor.codigo = $autor
@@ -154,7 +164,8 @@ $db = mysql_select_db('livraria');
       if (($autor <> 'null') and ($categoria == 'null') and ($classificacao <> 'null')) {
         $sql_livro = "SELECT livro.titulo, livro.valor, livro.fotocapa
                             FROM livro, autor, categoria, classificacao
-                            where livro.codautor = autor.codigo
+                            WHERE livro.codcategoria = categoria.codigo
+                            and livro.codautor = autor.codigo
                             and livro.codclassificacao = classificacao.codigo
                             AND livro.valor >= $preco_min
                             AND livro.valor <= $preco_max
@@ -168,6 +179,7 @@ $db = mysql_select_db('livraria');
         $sql_livro = "SELECT livro.titulo, livro.valor, livro.fotocapa
                             FROM livro, autor, categoria, classificacao
                             WHERE livro.codcategoria = categoria.codigo
+                            and livro.codautor = autor.codigo
                             and livro.codclassificacao = classificacao.codigo
                             AND livro.valor >= $preco_min
                             AND livro.valor <= $preco_max
