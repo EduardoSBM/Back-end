@@ -26,14 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #F4DBB3;
+            background-color: rgb(0, 0, 0);
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
         }
 
         .container {
-            background-color: #D2B48C;
+            background-color: rgb(102, 94, 94);
             padding: 40px;
             border-radius: 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -43,14 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         h2 {
-            color: #333;
+            color: rgb(255, 255, 255);
             text-align: center;
             margin-bottom: 20px;
         }
 
         .btn {
-            background-color: #333;
-            color: #F4DBB3;
+            background-color: rgb(102, 94, 94);
+            color: rgb(0, 0, 0);
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .btn:hover {
-            background-color: #A0522D;
+            background-color: rgb(255, 255, 255);
         }
 
         .form-group input[type="text"],
